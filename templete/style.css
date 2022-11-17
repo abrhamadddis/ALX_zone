@@ -30,8 +30,15 @@ footer {
 body {
   background-color: #fff;
 }
+.link-div {
+  text-align: center;
+}
+.link-div a {
+  width: 50%;
+}
 a:link {
-  color: black;
+  color: #fff;
+  border-radius: 15px;
 }
 a:visited {
   color: #1098ad;
