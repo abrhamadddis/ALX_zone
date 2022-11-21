@@ -4,19 +4,24 @@
     <meta charset="UTF-8">
     <title>{% block title %} {% endblock %} - FlaskApp</title>
     <style>
+        .message {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3
+        }
         nav a {
             color: #d64161;
             font-size: 3em;
             margin-left: 50px;
             text-decoration: none;
         }
+
     </style>
 </head>
 <body>
     <nav>
-        <a href="{{ url_for('hello') }}">FlaskApp</a>
-        <a href="{{ url_for('about') }}">About</a>
-        <a href="{{ url_for('comments') }}">Comments</a>
+        <a href="{{ url_for('index') }}">FlaskApp</a>
+        <a href="#">About</a>
     </nav>
     <hr>
     <div class="content">
