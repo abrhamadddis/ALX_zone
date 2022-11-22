@@ -3,12 +3,13 @@ from markupsafe import escape
 from flask import Flask, abort
 from flask import Flask, render_template, request, url_for, flash, redirect
 import datetime
+import sqlite3
 
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/hello')
 def hello():
     return '<h1>Hello, Bura!</h1>'
 
@@ -26,6 +27,7 @@ def login():
 @app.route('/registor/')
 def registor():
     return '<h2> this is the registration page</h2>'
+
 
 
 @app.route('/newpost/')
@@ -71,12 +73,12 @@ messages = [{'title': 'Message One',
             ]
 
 @app.route('/index')
-def index():
-    return render_template('index.html', messages=messages)
+# def index():
+#     return render_template('index.html', messages=messages)
 
-# ...
+# # ...
 
-app.config['SECRET_KEY'] = 'your secret key'
+# app.config['SECRET_KEY'] = 'your secret key'
 
 
 # ...
@@ -96,3 +98,20 @@ def create():
             return redirect(url_for('index'))
 
     return render_template('create.html')
+
+def get_db_connection():
+    conn = sqlite3.connect('database.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+
+@app.route('/')
+def index():
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM posts').fetchall()
+    conn.close()
+    return render_template('index.html', posts=posts)
+
+
+
