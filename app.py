@@ -19,3 +19,7 @@ def createpost():
 @app.route('/posts/')
 def posts():
     return render_template('posts.html')
+
+@app.route('/register/')
+def register():
+    return render_template('register.html')
