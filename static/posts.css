@@ -68,6 +68,9 @@ main{
 .title{
     margin-bottom: 10px;
 }
+a{
+    text-decoration: none;
+}
 /* .tag{
     margin: 20px;
     margin-bottom: 0;
