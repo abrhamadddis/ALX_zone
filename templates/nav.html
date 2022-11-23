@@ -5,16 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Rubik+Distressed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/posts.css">
+    <link rel="stylesheet" href="../static/register.css">
+    <link rel="stylesheet" href="../static/createPost.css">
+    <link rel="stylesheet" href="../static/login.css">
     <title>{% block title %} {% endblock %}- FlaskApp</title>
 </head>
 <body>
     <nav class="naviagation">
-        <ul>
-            <a href="{{ url_for('index') }}"><li>Home</li></a>
+        <div class="logo--alx">
+            <img class="logo-image" src="../static/logo.png" alt="heyy" class="">
+            <h3 class="logo-text">Zone</h3>
+        </div>
+        <ul class="nav--links">
             <a href="#"><li>About</li></a>
-            <a href="{{ url_for('createpost') }}"><li>New Post</li></a>
-            <a href="#"><li>Setting</li></a>
+            <a href="{{ url_for('index') }}"><li>Home</li></a>
+            <a href="{{ url_for('createpost') }}"><li>Write</li></a>
+            <a href="#"><li>Sign in</li></a>
+            <a href="{{ url_for('register') }}"><li>Register</li></a>
         </ul>
     </nav>
     <main class="main">

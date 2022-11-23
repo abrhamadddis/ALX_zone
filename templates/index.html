@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alx - Zone Blog post</title>
-    <link rel="stylesheet" href="../static/index.css" />
-  </head>
-  <div>
+{% extends 'nav.html' %}
+
+{% block content %}
     <body>
       <header class="main-header">
-        <h2>ALX - ZONE</h2>
-        <nav>
-          <a href="Home">Home</a>
-          <a href="Sign In">Sign In</a>
-          <a class="btn btn-dark" href="{{}}">Get Started</a>
-        </nav>
       </header>
       <article>
         <header>
@@ -43,3 +30,5 @@
     </body>
   </div>
 </html>
+
+{% endblock %}
