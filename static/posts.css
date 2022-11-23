@@ -9,7 +9,7 @@ body{
 .naviagation{
     display: flex;
     justify-content: flex-end;
-    background-color: #F55A5A;
+    background-color: #FFC017;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    
 }
 .logo--alx{
@@ -18,6 +18,15 @@ body{
     margin-left: 40px;
     justify-content: center;
 }
+@media only screen and (max-width: 800px){
+    .logo--alx{
+        margin-left: 10px;
+    }
+    .nav--links{
+    margin-right: 0px;
+    margin-left: 5px;
+    }
+  }
 .logo-image{
     width: 70px;
 }
@@ -40,7 +49,7 @@ body{
     cursor: pointer;
     color: #333;
 }
-main{
+.posts--main{
     margin-left: 70px;
     margin-top: 50px;
 }

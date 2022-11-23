@@ -1,60 +1,113 @@
-h2 {
-    font-family: sans-serif;
-    color: hsl(0, 85%, 45%);
-    font-size: 26px;
-    font-weight: bold;
+.horizonatal{
+  height: 1px;
+  border: 0;
+  color: #333;
+  background-color: #333;
+}
+section{
+  background-color: #FFC017;
+  margin: 0;
+  padding: 0;
+}
+.row--container{
+  padding-left: 100px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.header-title{
+  color: rgb(0, 0, 0);
+  font-size: 70px;
+  font-weight: 500;
+  font-family: 'Open Sans', sans-serif;
+}
+.header-content{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  font-size: 30px;
+  color: rgb(59, 48, 48);
+}
+.header-content span{
+  color: rgb(59, 48, 48);
+  font-size: smaller;
+}
+
+/* CSS */
+.button-9 {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #fc2112;
+  border-radius: 26px;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 120%;
+  height: 50px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 14%;
+}
+.button-9:disabled {
+  cursor: default;
+}
+
+.button-9:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+.button-9:hover{
+  background-color: #cf0e00;
+}
+.link-div{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.header--trending{
+  margin: 20px;
+}
+@media only screen and (max-width: 800px){
+  .button-9{
+    border-radius: 6px;
+    width: 30%;
+    font-size: 100%;
   }
-  nav a {
-    display: inline-block;
-    margin-left: 10px;
-  }
-  
-  
-  footer {
-    font-size: 20px;
-    text-align: right;
-  }
-  .main-header {
-    background-color: #b7b7b7;
-    border-bottom: 5px, solid blue;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    border-bottom: 5px solid pink;
-  }
-  .Reg {
-    position: absolute;
-    align-items: center;
-    display: inline-block;
-    font-size: 20px;
-  }
-  body {
-    background-color: #fff;
-  }
-  .link-div {
-    text-align: center;
-  }
-  .link-div a {
-    width: 50%;
-  }
-  a:link {
-    color: #fff;
-    border-radius: 15px;
-  }
-  a:visited {
-    color: #1098ad;
-  }
-  a:hover {
-    color: orangered;
-    font-weight: bold;
-    text-decoration: underline dotted orangered;
-  }
-  a:active {
-    font-style: italic;
-  }
-  .about {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: inline-block;
-  }
+}
+.container {
+  padding: 30px;
+  margin-top: 40px;
+  margin-left: 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 1.1fr 0.7fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 19px 22px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "post1 Post2 tech-stack"
+    "Post3 post4 tech-stack"
+    ". . .";
+}
+
+.post1 { grid-area: post1; }
+
+.Post2 { grid-area: Post2; }
+
+.Post3 { grid-area: Post3; }
+
+.post4 { grid-area: post4; }
+
+.tech-stack { grid-area: tech-stack; }
+
