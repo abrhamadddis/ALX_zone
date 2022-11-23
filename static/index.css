@@ -1,0 +1,59 @@
+h2 {
+    font-family: sans-serif;
+    color: hsl(0, 85%, 45%);
+    font-size: 26px;
+    font-weight: bold;
+  }
+  nav a {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  footer {
+    font-size: 20px;
+    text-align: right;
+  }
+  .main-header {
+    background-color: #b7b7b7;
+    border-bottom: 5px, solid blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 5px solid pink;
+  }
+  .Reg {
+    position: absolute;
+    align-items: center;
+    display: inline-block;
+    font-size: 20px;
+  }
+  body {
+    background-color: #fff;
+  }
+  .link-div {
+    text-align: center;
+  }
+  .link-div a {
+    width: 50%;
+  }
+  a:link {
+    color: #fff;
+    border-radius: 15px;
+  }
+  a:visited {
+    color: #1098ad;
+  }
+  a:hover {
+    color: orangered;
+    font-weight: bold;
+    text-decoration: underline dotted orangered;
+  }
+  a:active {
+    font-style: italic;
+  }
+  .about {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: inline-block;
+  }
