@@ -1,7 +1,7 @@
+#!/usr/bin/python3
 from flask import Flask, render_template
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def index():
@@ -22,3 +22,5 @@ def posts():
 @app.route('/register/')
 def register():
     return render_template('register.html')
+
+app.run(debug=True)
