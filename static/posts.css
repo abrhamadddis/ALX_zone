@@ -29,6 +29,15 @@ main{
     margin-left: 70px;
     margin-top: 50px;
 }
+.header--posts{ 
+    color: #ffffff;
+    font-size: 62px;
+    font-weight: 800;
+    line-height: 72px; 
+    margin: 0 0 24px; 
+    text-align: center; 
+    text-transform: uppercase; 
+}
 .post{
     cursor: pointer;
     max-width: 80%;

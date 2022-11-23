@@ -5,17 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="posts.css">
-    <title>Posts</title>
+    <link rel="stylesheet" href="../static/posts.css">
+    <title>{% block title %} {% endblock %}- FlaskApp</title>
 </head>
 <body>
     <nav class="naviagation">
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>New Post</li>
-            <li>Setting</li>
+            <a href="{{ url_for('index') }}"><li>Home</li></a>
+            <a href="#"><li>About</li></a>
+            <a href="{{ url_for('createpost') }}"><li>New Post</li></a>
+            <a href="#"><li>Setting</li></a>
         </ul>
     </nav>
+    <main class="main">
+    {% block content %}
+     
+    {% endblock %}
+    </main>
 </body>
 </html>
