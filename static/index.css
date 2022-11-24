@@ -1,11 +1,11 @@
-.horizonatal{
+/* .horizonatal{
   height: 1px;
   border: 0;
   color: #333;
   background-color: #333;
-}
+} */
 section{
-  background-color: #FFC017;
+  background-color: white;
   margin: 0;
   padding: 0;
 }
@@ -38,11 +38,11 @@ section{
 .button-9 {
   appearance: button;
   backface-visibility: hidden;
-  background-color: #fc2112;
-  border-radius: 26px;
+  background-color: hsl(40, 19%, 6%);
+  border-radius: 6px;
   border-width: 0;
   box-sizing: border-box;
-  color: #fff;
+  color: rgb(216, 198, 198);
   cursor: pointer;
   font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
   font-size: 120%;
@@ -70,7 +70,7 @@ section{
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
 }
 .button-9:hover{
-  background-color: #cf0e00;
+  background-color: #daa000;
 }
 .link-div{
   margin-top: 20px;
