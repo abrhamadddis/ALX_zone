@@ -1,19 +1,4 @@
-body  
-{  
-    
-    font-family: "aktiv-grotesk", sans-serif;
-    font-size: 14px;
-    line-height: 1.428571429;
-    color: #333333;
-    background-color: #fff;
-    
-} 
-nav {
-    background-color: #F8F9FA;
-    width: 100%;
-    display: flex;
-    
-}
+
 ul {
     text-decoration: none;
     list-style: none;

@@ -1,38 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="../static/register.css">
-</head>
-<body>    
+{% extends 'nav.html' %}
 
-            
-    <form id="login">
-        <h1 id="label_1">Register </h1>
-        <div id="main">
-            <label class="label_2"><b>User name</b></label>
-            <br>
-            <input class="input_2" type="name" name="name" id="Uname" placeholder="Username">    
-            <br>
-            <label class="label_2"><b>Email</b></label>
-            <br>
-            <input class="input_2" type="email" name="email" id="Uname" placeholder="Email">    
-            <br>
-            <label class="label_2"><b>Password</b></label>
-            <br>
-            <input class="input_2" type="Password" name="Pass" id="Pass" placeholder="Password">    
-            <br><br>
-            <label class="label_2"><b>Confirmation Password</b></label>
-            <br>
-            <input class="input_2" type="Password" name="Pass" id="Pass" placeholder=" confirm Password">    
-            <br><br>
-            <button id="log">Register</button>       
-        </div>  
-    </form>     
-</div>    
-</body> 
+{% block content %} 
 
-</html>
+<form id="login">
+    <h1 id="label_1">Register </h1>
+    <div id="main">
+        <label class="label_2"><b>User name</b></label>
+        <br>
+        <input class="input_2" type="name" name="name" id="Uname" placeholder="Username">    
+        <br>
+        <label class="label_2"><b>Email</b></label>
+        <br>
+        <input class="input_2" type="email" name="email" id="Uname" placeholder="Email">    
+        <br>
+        <label class="label_2"><b>Password</b></label>
+        <br>
+        <input class="input_2" type="Password" name="Pass" id="Pass" placeholder="Password">    
+        <br><br>
+        <label class="label_2"><b>Confirmation Password</b></label>
+        <br>
+        <input class="input_2" type="Password" name="Pass" id="Pass" placeholder=" confirm Password">    
+        <br><br>
+        <button id="log">Register</button>       
+    </div>  
+</form>
+
+{% endblock %}

@@ -9,23 +9,48 @@ body{
 .naviagation{
     display: flex;
     justify-content: flex-end;
-    background-color: #F55A5A;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    
+    background-color: white;
+    border-bottom: 1px solid #333;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
-ul{
-    margin-right: 30px;
-    padding: 20px;
+.logo--alx{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    justify-content: center;
+}
+@media only screen and (max-width: 800px){
+    .logo--alx{
+        margin-left: 10px;
+    }
+    .nav--links{
+    margin-right: 0px;
+    margin-left: 5px;
+    }
+  }
+.logo-image{
+    width: 70px;
+}
+.logo-text{
+    font-size: 30px;
+    font-family: 'Rubik Distressed', cursive;
+    font-weight: 500;
+}
+.nav--links{
+    margin-left: auto;
+    margin-right: 80px;
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: row;
 }
-li{
+.nav--links li{
     list-style: none;
     margin-left: 12px;
-    font-size: 18px;
+    font-size: 14px;
     cursor: pointer;
-    color: white;
+    color: #333;
 }
-main{
+.posts--main{
     margin-left: 70px;
     margin-top: 50px;
 }
@@ -38,7 +63,7 @@ main{
     text-align: center; 
     text-transform: uppercase; 
 }
-.post{
+.posts--page{
     cursor: pointer;
     max-width: 80%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
@@ -67,6 +92,9 @@ main{
 }
 .title{
     margin-bottom: 10px;
+}
+a{
+    text-decoration: none;
 }
 /* .tag{
     margin: 20px;

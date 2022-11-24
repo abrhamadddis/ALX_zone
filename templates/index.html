@@ -1,56 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alx - Zone Blog post</title>
-    <link rel="stylesheet" href="../static/index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <div>
-    <body>
-      <header class="main-header">
-        <h2>ALX - ZONE</h2>
-        <nav>
-          <a href="Home">Home</a>
-          <a href="Sign In">Sign In</a>
-          <a class="btn btn-dark" href="Get Started">Get Started</a>
-        </nav>
-      </header>
-      <article>
-        <header>
-          <div class="row container">
-            <div class="col-sm-6">
-              <h3>Having trouble?</h3>
-              <p>
-                <em>
-                  You are not alone!<br />
-                  We are here to support you Browse your issue and resolve them
-                </em>
-                <br />
+{% extends 'nav.html' %}
+
+{% block content %}
+<!-- <hr class="horizonatal"> -->
+<section>
+        <div class="header--homepage">
+          <div class="row--container">
+              <h3 class="header-title">Having trouble?.</h3>
+              <p class="header-content">
+                <span>
+                    You are not alone!
+                </span>
+                    Discover thinkings, and expertises <br> from peers experiences.    
               </p>
               <div class="link-div">
-                <a class="btn btn-dark" href="register">Register Here!</a>
+                <a href="{{ url_for('register') }}">
+                  <button class="button-9" role="button">Get Started</button>
+                </a>
               </div>
-            </div>
-            <div class="col-sm-6">Animation</div>
           </div>
-        </header>
-      </article>
-      <footer>
-        <a class="btn btn-dark about" href="about">About</a>
-      </footer>
-    </body>
-  </div>
-</html>
+        </div>
+</section>
+<h3 class="header--trending">Trending blogs</h3>
+<div class="container">
+  
+    <div class="post1">
+      <div class="post-header">
+          <img class="profile-pic" src="../static/portrait-white-man-isolated_53876-40306.webp" alt="heee">
+          <h5 class="name">Melaku Alehegn</h5>
+          <h5 class="date">Updated 1 day ago</h5>    
+      </div>
+      <h3 class="title">Mac tools for absolute beginners</h3>
+      <p class="content">Without further ado, here are 7mac tools I use on all my macs. Whenever I get a new mac, I set up these seven tools so I can start working in a more comfortable atmosphere, and they help me to increase my productivity.</p>
+      <!-- <p class="tag">5 minutes read</p> -->
+    </div>
+    <div class="post2">
+      <div class="post-header">
+          <img class="profile-pic" src="../static/closeup-portrait-yong-woman-casual-260nw-1554086789.webp" alt="heee">
+          <h5 class="name">Elsa Graham</h5>
+          <h5 class="date">Updated 2 day ago</h5>    
+      </div>
+      <h3 class="title">Implementing A Second Brain in Emacs and Org-Mode</h3>
+      <p class="content">This post is a continuation of “Building A Second Brain with Emacs and Org-Mode.” If you haven’t read that yet, read that post first. It gave a high level overview of how BASB extends GTD, what Emacs and Org-Mode</p>
+      </p>
+
+    </div>
+    <div class="post3">
+      <div class="post-header">
+          <img class="profile-pic" src="../static/portrait-white-man-isolated_53876-40306.webp" alt="heee">
+          <h5 class="name">Abraham Addis</h5>
+          <h5 class="date">Updated 7 day ago</h5>    
+      </div>
+      <h3 class="title">Mac tools for absolute beginners</h3>
+      <p class="content">Without further ado, here are 7mac tools I use on all my macs. Whenever I get a new mac, I set up these seven tools so I can start working in a more comfortable atmosphere, and they help me to increase my productivity.</p>
+    </div>
+    <div class="post4">
+      <div class="post-header">
+          <img class="profile-pic" src="../static/closeup-portrait-yong-woman-casual-260nw-1554086789.webp" alt="heee">
+          <h5 class="name">Elsa Graham</h5>
+          <h5 class="date">Updated 1 day ago</h5>    
+      </div>
+      <h3 class="title">Mac tools for absolute beginners</h3>
+      <p class="content">Without further ado, here are 7mac tools I use on all my macs. Whenever I get a new mac, I set up these seven tools so I can start working in a more comfortable atmosphere, and they help me to increase my productivity.</p>
+    </div>
+    <div class="teckstack">
+      <div class="post-header">
+          <img class="profile-pic" src="../static/closeup-portrait-yong-woman-casual-260nw-1554086789.webp" alt="heee">
+          <h5 class="name">Elsa Graham</h5>
+          <h5 class="date">Updated 1 day ago</h5>    
+      </div>
+      <h3 class="title">Mac tools for absolute beginners</h3>
+      <p class="content">Without further ado, here are 7mac tools I use on all my macs. Whenever I get a new mac, I set up these seven tools so I can start working in a more comfortable atmosphere, and they help me to increase my productivity.</p>
+</div>
+{% endblock %}
