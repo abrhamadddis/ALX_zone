@@ -71,6 +71,7 @@ section{
 }
 .button-9:hover{
   background-color: #daa000;
+  color: black;
 }
 .link-div{
   margin-top: 20px;
