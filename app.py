@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sqlite3
 from flask import Flask, render_template, request, url_for, flash, redirect, abort
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'd6bb525dd12c9953922f61784e785ba147f643b5d515ba0f'
@@ -32,6 +33,7 @@ def register():
         name = request.form['name']
         email = request.form['email']
         password = request.form['password']
+        hashed=generate_password_hash(password, method='sha256')
         pwd = request.form['pwd']
 
         if not name:
@@ -47,7 +49,7 @@ def register():
         else:
             conn = get_db_connection()
             conn.execute('INSERT INTO user (name, email, password) VALUES (?, ?, ?)',
-                         (name, email, password))
+                         (name, email, hashed))
             conn.commit()
             conn.close()
             return redirect(url_for('login'))
