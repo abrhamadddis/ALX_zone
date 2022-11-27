@@ -1,7 +1,7 @@
 from flask import Flask,render_template
 from flask_sqlalchemy import flask_sqlalchemy
 from datetime import datetime
-
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///alx.db'
 app = Flask(__name__)
 db = SQLAlchemy(app)
 
