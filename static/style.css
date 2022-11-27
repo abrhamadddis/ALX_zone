@@ -57,3 +57,7 @@ a:active {
   right: 0;
   display: inline-block;
 }
+.contentR h2 {
+  color: red;
+  position: absolute;
+}
