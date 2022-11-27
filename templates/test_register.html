@@ -1,0 +1,22 @@
+{% extends 'nav.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='static/createPost.css') }}"/>
+
+{% block content %} 
+
+<form method="posts">
+    <h1 id="label_1">New post </h1>
+    <hr>
+    <div id="main">
+        <label >Title</label>
+        <br>
+        <input class="input_2" type="text" name="title" value="{{ request.form['title'] }}" id="Pass" ></input>
+        <br>
+        <label>Content</label>
+        <textarea name="" class="post" cols="30" rows="10" >{{ request.form['content'] }}</textarea> 
+        <br><br>
+        <button type="submit" id="post_but">Post</button> 
+        <br><br>     
+    </div>  
+</form> 
+
+{% endblock %}

@@ -3,21 +3,24 @@
 {% block content %}
 <h1>{% block title %} Posts {% endblock %}</h1>
 <div class="posts--main">
+    {% for post in posts %}
     <div class="posts--page">
         <div class="post-header">
             <img class="profile-pic" src="../static/portrait-white-man-isolated_53876-40306.webp" alt="heee">
-            <h5 class="name">Melaku Alehegn</h5>
-            <h5 class="date">Updated 1 day ago</h5>    
+            <h5 class="name">{{ post.user }}</h5>
+            <h5 class="date">{{ post.date_posted }}</h5>
         </div>
-        <h3 class="title">Mac tools for absolute beginners</h3>
-        <p class="content">Without further ado, here are 7mac tools I use on all my macs. Whenever I get a new mac, I set up these seven tools so I can start working in a more comfortable atmosphere, and they help me to increase my productivity.</p>
-        <!-- <p class="tag">5 minutes read</p> -->
+        <h3 class="title">{{ post.title }}</h3>
+        <p class="content">{{ post['content'] }}</p>
     </div>
-    <div class="posts--page">
+    {% endfor %}
+</div>
+{% endblock %}
+    <!-- <div class="posts--page">
         <div class="post-header">
             <img class="profile-pic" src="../static/closeup-portrait-yong-woman-casual-260nw-1554086789.webp" alt="heee">
             <h5 class="name">Elsa Graham</h5>
-            <h5 class="date">Updated 2 day ago</h5>    
+            <h5 class="date">{{ post['created'] }}</h5>    
         </div>
         <h3 class="title">Implementing A Second Brain in Emacs and Org-Mode</h3>
         <p class="content">This post is a continuation of “Building A Second Brain with Emacs and Org-Mode.” If you haven’t read that yet, read that post first. It gave a high level overview of how BASB extends GTD, what Emacs and Org-Mode</p>
@@ -28,7 +31,7 @@
         <div class="post-header">
             <img class="profile-pic" src="../static/portrait-white-man-isolated_53876-40306.webp" alt="heee">
             <h5 class="name">Abraham Addis</h5>
-            <h5 class="date">Updated 7 day ago</h5>    
+            <h5 class="date">{{ post['created'] }}</h5>    
         </div>
         <h3 class="title">Mac tools for absolute beginners</h3>
         <p class="content">Without further ado, here are 7mac tools I use on all my macs. Whenever I get a new mac, I set up these seven tools so I can start working in a more comfortable atmosphere, and they help me to increase my productivity.</p>
@@ -37,10 +40,9 @@
         <div class="post-header">
             <img class="profile-pic" src="../static/closeup-portrait-yong-woman-casual-260nw-1554086789.webp" alt="heee">
             <h5 class="name">Elsa Graham</h5>
-            <h5 class="date">Updated 1 day ago</h5>    
+            <h5 class="date">{{ post['created'] }}</h5>    
         </div>
         <h3 class="title">Mac tools for absolute beginners</h3>
         <p class="content">Without further ado, here are 7mac tools I use on all my macs. Whenever I get a new mac, I set up these seven tools so I can start working in a more comfortable atmosphere, and they help me to increase my productivity.</p>
-    </div>
-</div>
-{% endblock %}
+    </div> -->
+
