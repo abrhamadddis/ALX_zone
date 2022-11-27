@@ -1,8 +1,7 @@
 
 CREATE TABLE IF NOT EXISTS user(
         user_id INTEGER PRIMARY KEY  AUTOINCREMENT,
-        firstName VARCHAR(200) NOT NULL,
-        lastName VARCHAR(200) NOT NULL,
+        name VARCHAR(200) NOT NULL,
         email VARCHAR(200) NOT NULL,
         password VARCHAR(25)
     );
