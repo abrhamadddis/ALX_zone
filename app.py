@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sqlite3
 from flask import Flask, render_template, request, url_for, flash, redirect, abort
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'd6bb525dd12c9953922f61784e785ba147f643b5d515ba0f'
@@ -22,8 +23,25 @@ def get_post(post_id):
 def index():
     return render_template('index.html')
 
-@app.route('/login/')
+@app.route('/login/' methods=('GET', 'POST'))
 def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        if not email:
+            flash('please enter your email')
+        elif not password:
+            flash('please enter your password')
+        else:
+            conn = get_db_connection()
+            conn.execue("SELECT name, password FROM  user where name= '"+email+"' and password='"+password+"'")
+            sqlite3.Cursor.exceute(query)
+            output = sqlite3.Cursor.fetchall()
+            if len(output) == 0:
+                flash("not registerd on our plat form")
+            else:
+                return redirect(url_for('post'))
+
     return render_template('login.html')
 
 @app.route('/register/', methods=('GET', 'POST'))
@@ -32,6 +50,7 @@ def register():
         name = request.form['name']
         email = request.form['email']
         password = request.form['password']
+        hashed=generate_password_hash(password, method='sha256')
         pwd = request.form['pwd']
 
         if not name:
@@ -47,7 +66,7 @@ def register():
         else:
             conn = get_db_connection()
             conn.execute('INSERT INTO user (name, email, password) VALUES (?, ?, ?)',
-                         (name, email, password))
+                         (name, email, hashed))
             conn.commit()
             conn.close()
             return redirect(url_for('login'))

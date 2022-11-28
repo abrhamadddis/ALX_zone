@@ -12,16 +12,16 @@
 {% endblock %}
 {% block content %}
 
-<form id="login">
+<form id="login" method="post">
     <h1 id="label_1">ALX Zone </h1>
     <div id="main">
         <label>Email</label>
         <br>
-        <input class="input_2" type="email" name="email" id="Uname">    
+        <input class="input_2" type="email" name="email" id="Uname" value="{{ request['email'] }}">    
         <br>
         <label>Password</label>
         <br>
-        <input class="input_2" type="Password" name="Pass" id="Pass">    
+        <input class="input_2" type="password" name="password" id="Pass" value="{{ request['password'] }}">    
         <br><br>
         <div>
             <input type="checkbox" id="check">    
