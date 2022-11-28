@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import sqlite3
 
-connection = sqlite3.connect('alx.db')
+connection = sqlite3.connect('test.db')
 
 
 with open('schema.sql') as f:
