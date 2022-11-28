@@ -23,20 +23,19 @@ def get_post(post_id):
 def index():
     return render_template('index.html')
 
-@app.route('/login/' methods=('GET', 'POST'))
+@app.route('/login/', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
+        # hashed=generate_password_hash(password, method='sha256')
         if not email:
             flash('please enter your email')
         elif not password:
             flash('please enter your password')
         else:
             conn = get_db_connection()
-            conn.execue("SELECT name, password FROM  user where name= '"+email+"' and password='"+password+"'")
-            sqlite3.Cursor.exceute(query)
-            output = sqlite3.Cursor.fetchall()
+            output = conn.execute("SELECT name, password FROM  user where email= '"+email+"' and password='"+password+"'").fetchall()
             if len(output) == 0:
                 flash("not registerd on our plat form")
             else:
@@ -50,7 +49,7 @@ def register():
         name = request.form['name']
         email = request.form['email']
         password = request.form['password']
-        hashed=generate_password_hash(password, method='sha256')
+        # hashed=generate_password_hash(password, method='sha256')
         pwd = request.form['pwd']
 
         if not name:
@@ -66,7 +65,7 @@ def register():
         else:
             conn = get_db_connection()
             conn.execute('INSERT INTO user (name, email, password) VALUES (?, ?, ?)',
-                         (name, email, hashed))
+                         (name, email, password))
             conn.commit()
             conn.close()
             return redirect(url_for('login'))
