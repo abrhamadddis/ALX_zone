@@ -26,8 +26,31 @@ def index():
 def login():
     return render_template('login.html')
 
-@app.route('/register/')
+@app.route('/register/', methods=('GET', 'POST'))
 def register():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        password = request.form['password']
+        pwd = request.form['pwd']
+
+        if not name:
+            flash('name is required')
+        elif not email:
+            flash('email is required')
+        elif not password:
+            flash('password is required')
+        elif not pwd:
+            flash('confirmatin password is required')
+        elif password != pwd:
+            flash('password did not match')
+        else:
+            conn = get_db_connection()
+            conn.execute('INSERT INTO user (name, email, password) VALUES (?, ?, ?)',
+                         (name, email, password))
+            conn.commit()
+            conn.close()
+            return redirect(url_for('login'))
     return render_template('register.html')
 
 @app.route('/createpost/', methods=('GET', 'POST'))
