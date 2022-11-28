@@ -29,6 +29,16 @@
         </ul>
     </nav>
     <main class="main">
+        {% for message in get_flashed_messages() %}
+            <label>
+                <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+                <div class="alert warning">
+                <span class="alertClose">X</span>
+                <span class="alertText">{{ message }}
+                    <br class="clear"/></span>
+                </div>
+            </label>
+        {% endfor %}
     {% block content %}
     
     {% endblock %}
