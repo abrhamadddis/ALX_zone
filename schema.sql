@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     CREATE SCHEMA IF NOT EXISTS ALX_ZONE;
     USE ALX_ZONE;
     CREATE TABLE IF NOT EXISTS  author(
@@ -36,3 +37,18 @@
         Foreign Key (blog_id) REFERENCES blogs (blog_id)
 
     );
+=======
+
+CREATE TABLE IF NOT EXISTS user(
+        user_id INTEGER PRIMARY KEY  AUTOINCREMENT,
+        name VARCHAR(200) NOT NULL,
+        email VARCHAR(200) NOT NULL,
+        password VARCHAR(25)
+    );
+CREATE TABLE IF NOT EXISTS posts(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL
+);
+>>>>>>> 2b532e12b4eb992576f42a3135bdc977cf465ad1

@@ -1,0 +1,148 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.naviagation{
+    display: flex;
+    justify-content: flex-end;
+    background-color: white;
+    border-bottom: 1px solid #333;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.logo--alx{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    justify-content: center;
+}
+@media only screen and (max-width: 800px){
+    .logo--alx{
+        margin-left: 10px;
+    }
+    .nav--links{
+    margin-right: 0px;
+    margin-left: 5px;
+    }
+  }
+.logo-image{
+    width: 70px;
+}
+.logo-text{
+    font-size: 30px;
+    font-family: 'Rubik Distressed', cursive;
+    font-weight: 500;
+}
+.nav--links{
+    margin-left: auto;
+    margin-right: 80px;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: row;
+}
+.nav--links li{
+    list-style: none;
+    margin-left: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+}
+.posts--main{
+    margin-left: 70px;
+    margin-top: 50px;
+}
+.header--posts{ 
+    color: #ffffff;
+    font-size: 62px;
+    font-weight: 800;
+    line-height: 72px; 
+    margin: 0 0 24px; 
+    text-align: center; 
+    text-transform: uppercase; 
+}
+.posts--page{
+    cursor: pointer;
+    max-width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    padding: 30px 20px;
+    margin-bottom: 60px;
+}
+.post-header{
+    display: flex;
+    margin-bottom: 20px;
+}
+.post-header h5 {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.profile-pic{
+    width: 66px;
+    height: 60px;
+    border-radius: 50%;
+}
+.name{
+    color: #F55A5A;
+    font-weight: 600;
+}
+.date{
+    color: dimgrey;
+}
+.title{
+    margin-bottom: 10px;
+}
+a{
+    text-decoration: none;
+}
+.alert {
+    position: relative;
+    top: 10;
+    left: 0;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 10px;
+    line-height: 1.8;
+    border-radius: 5px;
+    cursor: hand;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+.alertCheckbox {
+    display: none;
+}
+:checked + .alert {
+    display: none;
+}
+.alertText {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+}
+.alertClose {
+    float: right;
+    padding-top: 5px;
+    font-size: 10px;
+}
+
+.clear {
+    clear: both;
+}
+.warning {
+    background-color: #FDF7DF;
+    border: 1px solid #FEEC6F;
+    color: #C9971C;
+}
+/* .tag{
+    margin: 20px;
+    margin-bottom: 0;
+    background-color: aquamarine;
+    width: 15%;
+    border-radius: 3px;
+    padding: 4px 5px;
+} */

@@ -1,0 +1,37 @@
+
+{% extends 'nav.html' %}
+
+{% block style %}
+
+{{ super() }}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('static', filename='createPost.css') }}"/>
+
+{% endblock %}
+{% block content %}
+
+<form id="login" method="post">
+    <h1 id="label_1">ALX Zone </h1>
+    <div id="main">
+        <label>Email</label>
+        <br>
+        <input class="input_2" type="email" name="email" id="Uname" value="{{ request['email'] }}">    
+        <br>
+        <label>Password</label>
+        <br>
+        <input class="input_2" type="password" name="password" id="Pass" value="{{ request['password'] }}">    
+        <br><br>
+        <div>
+            <input type="checkbox" id="check">    
+            <label >Remember me </label>
+        </div>
+        <br><br>
+        <button id="log">Log in</button>      
+        <br><br>    
+        <a id="link_1" href="#">ForgotPassword?</a>   
+    </div>  
+</form>
+
+{% endblock %}
