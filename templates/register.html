@@ -2,24 +2,24 @@
 
 {% block content %} 
 
-<form method="post">
+<form method="post" >
     <h1 id="label_1">Register </h1>
     <div id="main">
         <label >User name</label>
         <br>
-        <input class="input_2" type="name" name="name" id="Uname" >    
+        <input class="input_2" type="text" name="name" id="Uname" value="{{ request['name'] }}" >    
         <br>
         <label >Email</label>
         <br>
-        <input class="input_2" type="email" name="email" id="Uname" >    
+        <input class="input_2" type="email" name="email" id="Uname" value="{{ request['email'] }}" >    
         <br>
         <label>Password</label>
         <br>
-        <input class="input_2 heyy" type="Password" name="Pass" id="Pass" >    
+        <input class="input_2" type="password" name="password" id="Pass" value="{{ request['password'] }}" >    
         <br>
         <label>Confirmation Password</label>
         <br>
-        <input class="input_2" type="Password" name="Pass" id="Pass" >    
+        <input class="input_2" type="password" name="pwd" id="Pass" value="{{ request['pwd'] }}">    
         <br>
         <button id="log">Register</button>       
     </div>  
