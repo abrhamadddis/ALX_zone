@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import sqlite3
 
-connection = sqlite3.connect('database.db')
+connection = sqlite3.connect('alx.db')
 
 
 with open('schema.sql') as f:
@@ -15,6 +15,10 @@ cur.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
 
 cur.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
             ('Second Post', 'Content for the second post')
+            )
+
+cur.execute("INSERT INTO user (name, email, password) VALUES (?, ?, ?)",
+            ('alx', 'alxzone@gmail.com', 'alxzonego')
             )
 
 connection.commit()
