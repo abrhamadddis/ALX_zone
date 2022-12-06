@@ -12,18 +12,18 @@
     <link rel="stylesheet" href="../static/createPost.css">
     <link rel="stylesheet" href="../static/login.css">
     <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='update_post.css') }}"/>
     <title>{% block title %} {% endblock %}- FlaskApp</title>
 </head>
 <body>
     <nav class="naviagation">
         <div class="logo--alx">
-            <img class="logo-image" src="../static/logo.png" alt="heyy" class="">
-            <h3 class="logo-text">Zone</h3>
+            <a href="{{ url_for('index') }}"><img class="logo-image" src="../static/logo.png" alt="heyy" class=""></a>
+          <a href="{{ url_for('index') }}"><h3 class="logo-text">Zone</h3></a>
         </div>
         <ul class="nav--links">
             <a href="#"><li>About</li></a>
             <a href="{{ url_for('index') }}"><li>Home</li></a>
-            <a href="{{ url_for('createpost') }}"><li>Write</li></a>
             <a href="{{ url_for('login') }}"><li>Sign in</li></a>
             <a href="{{ url_for('register') }}"><li>Register</li></a>
         </ul>

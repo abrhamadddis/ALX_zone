@@ -6,7 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'd6bb525dd12c9953922f61784e785ba147f643b5d515ba0f'
 def get_db_connection():
-    conn = sqlite3.connect('alx.db')
+    conn = sqlite3.connect('test.db')
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -88,7 +88,7 @@ def createpost():
             conn.commit()
             conn.close()
             return redirect(url_for('post'))
-    return render_template('createPost.html')
+    return render_template('update_post.html')
 
 app.route('/<int:id>/edit/', methods=('GET', 'POST'))
 def edit(id):

@@ -1,18 +1,58 @@
-{% extends 'nav.html' %}
-
-{% block content %}
-<h1>{% block title %} Posts {% endblock %}</h1>
-<div class="posts--main">
-    {% for post in posts %}
-    <div class="posts--page">
-        <div class="post-header">
-            <img class="profile-pic" src="../static/portrait-white-man-isolated_53876-40306.webp" alt="heee">
-            <h5 class="name">{{ post.user }}</h5>
-            <h5 class="date">{{ post.date_posted }}</h5>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Rubik+Dirt&family=Rubik+Distressed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/posts.css">
+    <link rel="stylesheet" href="../static/register.css">
+    <link rel="stylesheet" href="../static/createPost.css">
+    <link rel="stylesheet" href="../static/login.css">
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='update_post.css') }}"/>
+    <title>{% block title %} {% endblock %}- FlaskApp</title>
+</head>
+<body>
+    <nav class="naviagation">
+        <div class="logo--alx">
+            <a href="{{ url_for('index') }}"><img class="logo-image" src="../static/logo.png" alt="heyy" class=""></a>
+          <a href="{{ url_for('index') }}"><h3 class="logo-text">Zone</h3></a>
         </div>
-        <h3 class="title">{{ post.title }}</h3>
-        <p class="content">{{ post['content'] }}</p>
-    </div>
-    {% endfor %}
-</div>
-{% endblock %}
+        <ul class="nav--links">
+            <a href="#"><li>About</li></a>
+            <a href="{{ url_for('index') }}"><li>Home</li></a>
+            <a href="{{ url_for('createpost') }}"><li>Write</li></a>
+            <a href="{{ url_for('login') }}"><li>Sign out</li></a>
+        </ul>
+    </nav>
+    <main class="main">
+        {% for message in get_flashed_messages() %}
+            <label>
+                <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+                <div class="alert warning">
+                <span class="alertClose">X</span>
+                <span class="alertText">{{ message }}
+                    <br class="clear"/></span>
+                </div>
+            </label>
+        {% endfor %}
+        <div class="posts--main">
+            {% for post in posts %}
+            <div class="posts--page">
+                <div class="post-header">
+                    <img class="profile-pic" src="../static/portrait-white-man-isolated_53876-40306.webp" alt="heee">
+                    <h5 class="name">{{ post.post_user_id }}</h5>
+                    <h5 class="date">{{ post.created }}</h5>
+                </div>
+                <h3 class="title">{{ post.title }}</h3>
+                <p class="content">{{ post['content'] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>
+
