@@ -28,7 +28,6 @@ def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        # hashed=generate_password_hash(password, method='sha256')
         if not email:
             flash('please enter your email')
         elif not password:
@@ -49,7 +48,6 @@ def register():
         name = request.form['name']
         email = request.form['email']
         password = request.form['password']
-        # hashed=generate_password_hash(password, method='sha256')
         pwd = request.form['pwd']
 
         if not name:
@@ -118,7 +116,8 @@ def edit(id):
 def post():
     conn=get_db_connection()
     posts=conn.execute('SELECT * FROM posts').fetchall()
+    po = conn.execute('SELECT user.name, posts.title, posts.content, posts.created \
+        FROM user, posts WHERE user.user_id = posts.post_user_id').fetchall()
     conn.close()
-    return render_template('posts.html', posts=posts)
-
+    return render_template('posts.html', posts=posts, po=po)
 app.run(debug=True)
