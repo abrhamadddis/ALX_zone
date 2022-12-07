@@ -1,8 +1,18 @@
+DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS posts;
 
-CREATE TABLE posts (
+CREATE TABLE IF NOT EXISTS user(
+        user_id INTEGER PRIMARY KEY  AUTOINCREMENT,
+        name VARCHAR(200) NOT NULL,
+        email VARCHAR(200) NOT NULL,
+        password VARCHAR(25)
+    );
+CREATE TABLE IF NOT EXISTS posts(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    created_by TEXT NOT NULL, 
     title TEXT NOT NULL,
-    content TEXT NOT NULL
+    content TEXT NOT NULL,
+    post_user_id INTEGER,
+    FOREIGN KEY(post_user_id) REFERENCES user(user_id)
 );
