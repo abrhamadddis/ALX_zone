@@ -1,2 +1,5 @@
-# alx zone protfolio project
-## this exists on backend project  
+# ALX-Zone
+
+## ALX foundation protfolio project
+
+## colaborators 
