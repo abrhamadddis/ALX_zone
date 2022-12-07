@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Rubik+Dirt&family=Rubik+Distressed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/posts.css">
     <link rel="stylesheet" href="../static/register.css">
-    <link rel="stylesheet" href="../static/createPost.css">
+    <!-- <link rel="stylesheet" href="../static/createPost.css"> -->
     <link rel="stylesheet" href="../static/login.css">
     <link rel="stylesheet" href="../static/index.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='update_post.css') }}"/>
@@ -23,9 +24,9 @@
         </div>
         <ul class="nav--links">
             <a href="#"><li>About</li></a>
-            <a href="{{ url_for('index') }}"><li>Home</li></a>
-            <a href="{{ url_for('login') }}"><li>Sign in</li></a>
-            <a href="{{ url_for('register') }}"><li>Register</li></a>
+            <a href="{{ url_for('post') }}"><li>Home</li></a>
+            <a href="{{ url_for('createpost') }}"><li>Write</li></a>
+            <a href="{{ url_for('login') }}"><li>Sign out</li></a>
         </ul>
     </nav>
     <main class="main">
@@ -39,9 +40,23 @@
                 </div>
             </label>
         {% endfor %}
-    {% block content %}
-    
-    {% endblock %}
     </main>
+        <form  id="mainSection" method="post">
+            <div>
+                <h1>New Post</h1>
+                <hr>
+                <br><br>
+                <label class="lables" for="">Title</label>
+                <br>
+                <input type="text" class="section1" name="title" id="Pass" value="{{ request.form['title'] }}" >
+                <br><br>
+                <label class="lables" for="">Content</label>
+                <br>
+                <textarea name="content" class="section2" cols="30" rows="10">{{ request.form['content'] }}</textarea>
+                <br><br>
+                <button id="section3" type="submit">Post</button> 
+            </div>
+        </form>
 </body>
 </html>
+

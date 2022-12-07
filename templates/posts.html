@@ -12,19 +12,20 @@
     <link rel="stylesheet" href="../static/createPost.css">
     <link rel="stylesheet" href="../static/login.css">
     <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='update_post.css') }}"/>
     <title>{% block title %} {% endblock %}- FlaskApp</title>
 </head>
 <body>
     <nav class="naviagation">
         <div class="logo--alx">
-            <a href="{{ url_for('index') }}"><img class="logo-image" src="../static/logo.png" alt="heyy" class=""></a>
-          <a href="{{ url_for('index') }}"><h3 class="logo-text">Zone</h3></a>
+            <a href="{{ url_for('post') }}"><img class="logo-image" src="../static/logo.png" alt="heyy" class=""></a>
+          <a href="{{ url_for('post') }}"><h3 class="logo-text">Zone</h3></a>
         </div>
         <ul class="nav--links">
             <a href="#"><li>About</li></a>
-            <a href="{{ url_for('index') }}"><li>Home</li></a>
+            <a href="{{ url_for('post') }}"><li>Home</li></a>
             <a href="{{ url_for('createpost') }}"><li>Write</li></a>
-            <a href="{{ url_for('login') }}"><li>Sign out</li></a>
+            <a href="{{ url_for('logout') }}"><li>Sign out</li></a>
         </ul>
     </nav>
     <main class="main">
@@ -42,8 +43,8 @@
             {% for post in posts %}
             <div class="posts--page">
                 <div class="post-header">
-                    <img class="profile-pic" src="../static/portrait-white-man-isolated_53876-40306.webp" alt="heee">
-                    <h5 class="name">{{ post.post_user_id }}</h5>
+                    <img class="profile-pic" src="../static/download.png" alt="heee">
+                    <h5 class="name">{{ post.created_by }}</h5>
                     <h5 class="date">{{ post.created }}</h5>
                 </div>
                 <h3 class="title">{{ post.title }}</h3>
